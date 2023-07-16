@@ -1,4 +1,5 @@
 import Header from "@/components/home/header";
+import Navbar from "@/components/navbar/navbar";
 import { Container } from "@chakra-ui/react";
 import React from "react";
 import { toast } from "react-toastify";
@@ -10,6 +11,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Navbar />
       <Header />
       <Container maxW={"7xl"}>
         {/* <Analytics />
