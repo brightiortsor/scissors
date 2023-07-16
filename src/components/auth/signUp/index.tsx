@@ -81,7 +81,7 @@ const SignUp = () => {
         email: user?.email,
       });
 
-      router.push("/onboarding");
+      router.push("/signin");
 
       // Clear form data
       setFormData({

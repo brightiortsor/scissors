@@ -55,14 +55,14 @@ function Navbar() {
               borderRadius={"3rem"}
               bgColor={"blue"}
             >
-              <a
-                href="/SignUp"
+              <Link
+                href="/signup"
                 style={{
                   color: "white",
                 }}
               >
                 Try for free
-              </a>
+              </Link>
             </Button>
           </Box>
         </div>

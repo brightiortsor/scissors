@@ -63,7 +63,6 @@ const SignIn = () => {
         draggable: true,
       });
 
-      // Redirect to home page or any other desired route
       router.push("/");
     } catch (error) {
       setError("Invalid email or password");

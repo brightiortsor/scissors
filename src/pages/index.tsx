@@ -1,3 +1,5 @@
+import Faq from "@/components/faqs/faqs";
+import Features from "@/components/features/features";
 import Footer from "@/components/footer/footer";
 import Header from "@/components/home/header";
 import Navbar from "@/components/navbar/navbar";
@@ -15,9 +17,9 @@ const HomePage = () => {
       <Navbar />
       <Header />
       <Container maxW={"7xl"}>
-        {/* <Analytics />
-        <Faq /> */}
+        <Features />
       </Container>
+      <Faq />
       <Footer />
     </>
   );
