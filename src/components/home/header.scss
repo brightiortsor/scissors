@@ -13,7 +13,7 @@
         align-items: center;
         justify-content: center;
         align-self: center;
-        width: 75%;
+        width: 100%;
 
         h1 {
             font-size: 3em;
@@ -192,8 +192,8 @@
                         &::after {
                             content: "";
                             position: absolute;
-                            bottom: 0px;
-                            left: -265px;
+                            bottom: 55px;
+                            left: -60px;
                             width: 5px;
                             height: 48px;
                             background-image: linear-gradient(rgba(17, 34, 50, 1),
@@ -206,7 +206,6 @@
                     font-size: 1.3em;
                     line-height: 1.6em;
                     width: 93%;
-                    margin-left: 15px;
                 }
             }
 
@@ -214,11 +213,6 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2em;
-
-                //column-gap: 30px;
-                //row-gap: 40px;
-                //margin-left: 50px;
-
 
                 >div {
                     max-width: 340px;

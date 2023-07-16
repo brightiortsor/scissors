@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/footer";
 import Header from "@/components/home/header";
 import Navbar from "@/components/navbar/navbar";
 import { Container } from "@chakra-ui/react";
@@ -17,6 +18,7 @@ const HomePage = () => {
         {/* <Analytics />
         <Faq /> */}
       </Container>
+      <Footer />
     </>
   );
 };
