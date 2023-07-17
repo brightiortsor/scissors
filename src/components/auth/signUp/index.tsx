@@ -16,7 +16,7 @@ import {
   fetchSignInMethodsForEmail,
 } from "firebase/auth";
 import { auth, database } from "@/firebase/ClientApp";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 import { ref, set } from "firebase/database";
@@ -80,8 +80,26 @@ const SignUp = () => {
       set(ref(database, `users/${user?.uid}`), {
         email: user?.email,
       });
+      toast.success("Account created successfully!", {
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: true,
+      });
+      setTimeout(() => {
+        toast.info("Redirecting to login page...", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          draggable: true,
 
-      router.push("/signin");
+          onClose: () => {
+            router.push("/signin");
+          },
+        });
+      }, 2000);
 
       // Clear form data
       setFormData({
@@ -90,6 +108,7 @@ const SignUp = () => {
         confirmPassword: "",
       });
     } catch (error) {
+      console.error("Sign up error:", error);
       setError("Something went wrong");
     } finally {
       setLoading(false);
@@ -168,25 +187,6 @@ const SignUp = () => {
           </Link>
         </Text>
       </Box>
-      {/* <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Proceed to Login?</ModalHeader>
-          <ModalBody>
-            <Text>
-              Please confirm if you want to proceed to the login page.
-            </Text>
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue" onClick={handleLogin}>
-              Login
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal> */}
     </Container>
   );
 };

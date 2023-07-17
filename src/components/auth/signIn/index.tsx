@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, database } from "@/firebase/ClientApp";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 import { ref, update } from "firebase/database";
