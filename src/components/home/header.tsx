@@ -8,7 +8,7 @@ import link_analytics from "../../../public/assets/link-analytics.png";
 import bullet_circle from "../../../public/assets/bullet-circle.png";
 import bullet_circle_white from "../../../public/assets/bullet-circle-white.png";
 import link from "../../../public/assets/link.png";
-import { Container, Flex, Image } from "@chakra-ui/react";
+import { Box, Container, Flex, Image } from "@chakra-ui/react";
 import Link from "next/link";
 
 function Header() {
@@ -95,7 +95,7 @@ function Header() {
                     margin: "0 auto",
                   }}
                 />
-                <h2>URL Shortening</h2>
+                <h2 style={{ margin: "10px 0" }}>URL Shortening</h2>
                 <p>
                   Scissor allows you to shorten URLs of your business, events.
                   Shorten your URL at scale, URL redirects.
@@ -110,7 +110,7 @@ function Header() {
                     margin: "0 auto",
                   }}
                 />
-                <h2>Custom URLs</h2>
+                <h2 style={{ margin: "10px 0" }}>Custom URLs</h2>
                 <p>
                   With Scissor, you can create custom URLs, with the length you
                   want! A solution for socials and businesses.
@@ -125,7 +125,7 @@ function Header() {
                     margin: "0 auto",
                   }}
                 />
-                <h2>QR Codes</h2>
+                <h2 style={{ margin: "10px 0" }}>QR Codes</h2>
                 <p>
                   Generate QR codes to your business, events. Bring your
                   audience and customers to your doorstep with this scan and go
@@ -141,7 +141,7 @@ function Header() {
                     margin: "0 auto",
                   }}
                 />
-                <h2>Data Analytics</h2>
+                <h2 style={{ margin: "10px 0" }}>Data Analytics</h2>
                 <p>
                   Receive data on the usage of either your shortened URL, custom
                   URLs or generated QR codes. Embedded to monitor progress.
@@ -262,6 +262,7 @@ function Header() {
                 </ul>
               </div>
             </div>
+
             <div>
               <div>
                 <h3>Teams</h3>
