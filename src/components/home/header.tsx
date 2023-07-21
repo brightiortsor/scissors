@@ -1,5 +1,4 @@
 import React from "react";
-import "./header.scss";
 import plate from "../../../public/plate.png";
 import link_eclipse from "../../../public/link-eclipse.png";
 import link_pen from "../../../public/assets/link-pen.png";
@@ -10,6 +9,7 @@ import bullet_circle_white from "../../../public/assets/bullet-circle-white.png"
 import link from "../../../public/assets/link.png";
 import { Box, Container, Flex, Image } from "@chakra-ui/react";
 import Link from "next/link";
+import "../../styles/header.scss";
 
 function Header() {
   return (

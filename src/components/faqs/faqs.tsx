@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-import "./faqs.scss";
 import Link from "next/link";
+import "../../styles/faqs.scss";
 
 type Panel = {
   questionId: string;

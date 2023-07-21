@@ -1,6 +1,6 @@
-import "./footer.scss";
 import React from "react";
 import { Box, Container, Image } from "@chakra-ui/react";
+import "../../styles/footer.scss";
 
 function Footer() {
   return (

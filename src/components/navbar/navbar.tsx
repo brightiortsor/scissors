@@ -1,9 +1,9 @@
 import React from "react";
-import "./navbar.scss";
 import Hamburger from "hamburger-react";
 import logo from "../images/logo.png";
 import { Box, Button, Container, Image } from "@chakra-ui/react";
 import Link from "next/link";
+import "../../styles/navbar.scss";
 
 function Navbar() {
   return (
