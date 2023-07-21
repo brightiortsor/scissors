@@ -14,14 +14,7 @@ import QRCode from "qrcode.react";
 import Image from "next/image";
 import MagicWand from "../../../public/assets/magic-wand.png";
 import { toPng } from "html-to-image";
-
-const generateQRCode = (text: string) => {
-  return (
-    <div>
-      <QRCode value={text} fgColor="#000000" />
-    </div>
-  );
-};
+import styled from "@emotion/styled";
 
 const getLocalStorage = () => {
   if (typeof localStorage !== "undefined") {
@@ -125,6 +118,19 @@ const Scissor = () => {
         });
     }
   };
+
+  useEffect(() => {
+    if (showOutput && selectedOption === "qr_code") {
+      exportQRCode(); // Call exportQRCode function when the output container is displayed and the user selected 'Generate QR Code'
+    }
+  }, [showOutput, selectedOption]);
+  const generateQRCode = (text: string) => {
+    return (
+      <div ref={qrCodeRef}>
+        <QRCode value={text} fgColor="#054074" />
+      </div>
+    );
+  };
   return (
     <Box
       pb={8}
@@ -133,7 +139,7 @@ const Scissor = () => {
       px={{ base: "6", md: "0" }}
     >
       <form onSubmit={handleSubmit}>
-        <Flex flexDir={{ base: "column", md: "row" }} mb="4" gap="2">
+        <Flex flexDir={{ base: "column", md: "column" }} mb="4" gap="2">
           <FormControl>
             <Input
               type="url"
@@ -154,27 +160,14 @@ const Scissor = () => {
               }}
             />
           </FormControl>
-          <select value={selectedOption} onChange={handleOptionChange}>
-            <option value="shorten_url">Shorten Url</option>
-            <option value="qr_code">Generate QR Code</option>
-            <option disabled>Custom Domain</option>
-          </select>
-          {/* <Button
-            type="submit"
-            colorScheme="blue"
-            p="6"
-            flexShrink={0}
-            ml={{ md: "4" }}
-          >
-            Trim URL!
-          </Button> */}
-          <Button
-            type="submit"
-            colorScheme="blue"
-            p="6"
-            flexShrink={0}
-            ml={{ md: "4" }}
-          >
+          <StyledSelect>
+            <select value={selectedOption} onChange={handleOptionChange}>
+              <option value="shorten_url">Shorten Url</option>
+              <option value="qr_code">Generate QR Code</option>
+              <option disabled>Custom Domain</option>
+            </select>
+          </StyledSelect>
+          <Button type="submit" colorScheme="blue" p="6" flexShrink={0} mt={6}>
             {selectedOption === "qr_code" ? "Generate QR Code" : "Shorten URL"}
             <Image src={MagicWand} alt="trim URL" width={30} />
           </Button>
@@ -198,16 +191,18 @@ const Scissor = () => {
             <div>
               <Text mb="2">Congratulations! Here&apos;s your QR Code:</Text>
               <Box mt={{ base: "2", md: "4" }}>
-                <Flex align="center">
-                  {generateQRCode(links.full_short_link)}
-                  <Button
-                    onClick={exportQRCode}
-                    colorScheme="blue"
-                    size="lg"
-                    ml={4}
-                  >
-                    Export QR Code
-                  </Button>
+                <Flex align="center" flexDir={"column"} gap={2}>
+                  <Box>{generateQRCode(links.full_short_link)}</Box>
+                  <Box>
+                    <Button
+                      onClick={exportQRCode}
+                      colorScheme="blue"
+                      size="lg"
+                      mt={4}
+                    >
+                      Export QR Code
+                    </Button>
+                  </Box>
                 </Flex>
               </Box>
             </div>
@@ -228,19 +223,6 @@ const Scissor = () => {
               </Box>
             </div>
           )}
-          {/* <Box>
-            <Text mb="2">Congratulations! Here&apos;s your shortened URL:</Text>
-          </Box>
-          <Box mt={{ base: "2", md: "4" }}>
-            <Flex align="center">
-              <Text mr="4" color="cyan.500">
-                {links.full_short_link}
-              </Text>
-              <Button onClick={handleCopy} colorScheme="blue" size="lg">
-                {buttonText}
-              </Button>
-            </Flex>
-          </Box> */}
         </Box>
       )}
     </Box>
@@ -248,3 +230,28 @@ const Scissor = () => {
 };
 
 export default Scissor;
+
+const StyledSelect = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+
+  select {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+
+    option {
+      font-size: 18px;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  }
+`;
