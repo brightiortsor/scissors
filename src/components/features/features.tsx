@@ -82,7 +82,11 @@ function Features() {
   };
 
   return (
-    <div className="analytics__container" id="analytics">
+    <Box
+      className="analytics__container"
+      id="scissor"
+      scrollMarginTop={"150px"}
+    >
       {/* <form onSubmit={handleShortenUrl}>
         <div>
           <input
@@ -137,7 +141,7 @@ function Features() {
         {exportButton && <button onClick={exportQRCode}>Export QRCode</button>}
       </form> */}
       <Scissor />
-    </div>
+    </Box>
   );
 }
 

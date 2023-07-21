@@ -56,7 +56,7 @@ function Navbar() {
               bgColor={"blue"}
             >
               <Link
-                href="/signup"
+                href="#scissor"
                 style={{
                   color: "white",
                 }}
