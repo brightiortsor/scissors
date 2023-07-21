@@ -1,11 +1,13 @@
 import "./features.scss";
-import wand from "../images/magic-wand.png";
 import React, { useState, useRef } from "react";
 import QRCode from "qrcode.react";
 import { toPng } from "html-to-image";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { shortenUrl } from "@/utils/services";
+import MagicImg from "../../../public/assets/magic-wand.png";
+import Image from "next/image";
+import Scissor from "./shortner";
 
 function Features() {
   const [longUrl, setLongUrl] = useState("");
@@ -81,7 +83,7 @@ function Features() {
 
   return (
     <div className="analytics__container" id="analytics">
-      <form onSubmit={handleShortenUrl}>
+      {/* <form onSubmit={handleShortenUrl}>
         <div>
           <input
             type="text"
@@ -101,7 +103,7 @@ function Features() {
 
           <button type="submit" onClick={getExportButton}>
             {getButtonText()}
-            <Image src="/assets/magic-wand.png" alt="trim URL" width="24px" />
+            <Image src={MagicImg} alt="trim URL" width={30} />
           </button>
 
           {isButtonClicked && (
@@ -133,7 +135,8 @@ function Features() {
           <Link href="/">Privacy Policy</Link> and Use of Cookies.
         </p>
         {exportButton && <button onClick={exportQRCode}>Export QRCode</button>}
-      </form>
+      </form> */}
+      <Scissor />
     </div>
   );
 }
