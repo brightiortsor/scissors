@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import "../../styles/faqs.scss";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 type Panel = {
   questionId: string;
@@ -94,11 +95,8 @@ function Faq() {
               <h3 className="question" id={faqItem.questionId}>
                 {faqItem.question}
               </h3>
-              <i
-                className={`fa-solid ${
-                  isExpanded[faqItem.questionId] ? "fa-minus" : "fa-plus"
-                }`}
-              ></i>
+              {/* Use the React Icons instead of Font Awesome */}
+              {isExpanded[faqItem.questionId] ? <FaMinus /> : <FaPlus />}
             </div>
 
             <div
