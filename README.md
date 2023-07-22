@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# URL Shortener
+URL Shortener is a web application that allows users to shorten long URLs and generate QR codes for the shortened URLs. It is built using React, Chakra UI, Next.js, and the shrtcode API.
 
-## Getting Started
+# Features
+Shorten long URLs to compact, easy-to-share links.
+Generate QR codes for the shortened URLs.
+Copy the shortened URL to the clipboard with a single click.
+Export the generated QR code as an image for download.
 
-First, run the development server:
+# Live Demo
+https://scissors-qs1c.vercel.app/
 
-```bash
+# Getting Started
+To run the project locally, follow these steps:
+
+# Clone the repository:
+
+git clone https://github.com/brightiortsor/scissors.git
+cd scissors
+
+# Install dependencies:
+npm install
+# or
+yarn install
+Start the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#cOpen the application in your browser:
+The development server should be running at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Tech Stack
+React.js - JavaScript library for building user interfaces.
+Chakra UI - A simple and modular component library for React.
+Next.js - A framework for server-rendered React applications.
+qrcode.react - A React component to generate QR codes.
+html-to-image - A library to convert HTML to an image.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
 
-## Learn More
+# License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
